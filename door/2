@@ -1,0 +1,58 @@
+door_state = 0  # door is closed
+
+
+command = raw_input()
+command = command.split()
+open_key = ['open','door']
+
+close_key = ['close','door']
+count = 0
+for w in open_key:
+	if w in command:
+		count = count + 1		
+if count == len(open_key):
+	door_state = 1
+
+if door_state == 1:
+	print("Door Opened")
+
+
+
+
+command = raw_input()
+count = 0
+for w in close_key:
+	if w in command:
+		count = count + 1		
+if count == len(close_key):
+	door_state = 0 
+
+if door_state == 0:
+	print("Door Closed")
+
+'''
+for w in close_key:
+	if w in command:
+		door_state = 0
+if door_state == 0:
+	print("Door closed")
+'''
+
+
+'''
+Eg cases:
+open door
+open the door
+please open the door
+can you please open the door
+i want you to open the door right now
+'''
+
+
+
+'''
+if command == open_key:
+	door_state = 1
+	print("Door Opened.")
+'''
+
